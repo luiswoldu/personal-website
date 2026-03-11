@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/luiswoldu/Projects/luiswoldu.com/luiswoldu/app/page.tsx"],"sourcesContent":["import Navigation from \"app/components/Navigation\"\n\nexport default function Home() {\n  return (\n    <>\n      <Navigation />\n      <main>\n      </main>\n    </>\n  )\n}\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBACE;;0BACE,8OAAC;;;;;0BACD,8OAAC;;;;;;;AAIP"}}]
+}

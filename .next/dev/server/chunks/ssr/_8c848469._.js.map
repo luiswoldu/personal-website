@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/luiswoldu/Projects/luiswoldu.com/luiswoldu/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\nimport \"./globals.css\";\n\nexport const metadata: Metadata = {\n  title: \"Luis Woldu\",\n  description: \"luiswoldu.com\",\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <div style={{ maxWidth: \"430px\", margin: \"auto\", width: \"100%\" }}>\n          {children}\n        </div>\n      </body>\n    </html>\n  );\n}"],"names":[],"mappings":";;;;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,8OAAC;QAAK,MAAK;kBACT,cAAA,8OAAC;sBACC,cAAA,8OAAC;gBAAI,OAAO;oBAAE,UAAU;oBAAS,QAAQ;oBAAQ,OAAO;gBAAO;0BAC5D;;;;;;;;;;;;;;;;AAKX"}},
+    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":["file:///Users/luiswoldu/Projects/luiswoldu.com/luiswoldu/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}
