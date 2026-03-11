@@ -3,7 +3,7 @@ const Introduction = () => (
     <p className="text-lg sm:text-xl leading-relaxed">
       I'm building <a href="https://handsforu.com" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity">Hands</a>, your AI personal chef.
       <br /><br />
-      This website is a creative collection of my passion for architecture, art, engineering, filmmaking, graphic design, interface design, interior design, industrial design and writing.
+      This website is a creative outlet of my love for architecture, art, engineering, filmmaking, graphic design, interface design, interior design, industrial design and writing.
       <br /><br />
       Connect with me on instagram, x, linkedin, or at luiswoldu at gmail dot com!
     </p>
