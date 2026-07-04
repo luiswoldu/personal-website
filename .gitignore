@@ -1,1 +1,17 @@
-node_modules
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+
+# macOS Finder metadata
+.DS_Store
+
+# env files
+.env
+.env*.local
+
+# misc
+*.pem
+npm-debug.log*
