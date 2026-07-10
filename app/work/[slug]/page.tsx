@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft } from "lucide-react";
 import { PROJECT_DETAILS, type DetailBlock } from "../../content";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -28,20 +28,39 @@ function Block({ block }: { block: DetailBlock }) {
       );
     case "paragraph":
       return (
-        <p className="mx-auto mt-8 max-w-2xl text-[19px] leading-[1.65] text-neutral-900">
+        <p
+          className={`mx-auto mt-8 max-w-2xl text-[19px] leading-[1.65] text-neutral-900 ${block.bold ? "font-semibold" : ""}`}
+        >
           {block.text}
         </p>
       );
     case "image":
       return (
         <figure className="mx-auto mt-28 max-w-6xl">
-          <div className={`w-full ${block.aspect} ${block.bg}`} />
+          {block.src ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={block.src}
+              alt={block.caption ?? ""}
+              className={`w-full object-cover ${block.aspect ?? ""}`}
+            />
+          ) : (
+            <div className={`w-full ${block.aspect ?? ""} ${block.bg ?? ""}`} />
+          )}
           {block.caption && (
             <figcaption className="mt-6 text-[16px] italic text-neutral-500">
               {block.caption}
             </figcaption>
           )}
         </figure>
+      );
+    case "list":
+      return (
+        <ul className="mx-auto mt-8 max-w-2xl list-disc space-y-2 pl-6 text-[19px] leading-[1.65] text-neutral-900">
+          {block.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
       );
     case "statement":
       return (
@@ -65,11 +84,19 @@ export default async function ProjectDetailPage({
     <div className="flex min-h-screen flex-col">
       <Header activeHref="#work" />
       <main className="flex-1 px-7 pb-32">
-        <section className="mx-auto max-w-3xl pt-24 text-center">
+        <div className="mx-auto max-w-6xl pt-10">
+          <a
+            href="/#work"
+            className="inline-flex items-center gap-1 text-[14px] text-faint transition-colors hover:text-ink"
+          >
+            <ChevronLeft className="h-8 w-8" aria-hidden />
+          </a>
+        </div>
+        <section className="mx-auto max-w-3xl pt-14 text-center">
           <p className="text-[15px] tracking-[0.02em] text-faint">
             {detail.meta}
           </p>
-          <h1 className="mt-5 text-[44px] font-semibold tracking-[-0.02em] text-neutral-900 md:text-[60px]">
+          <h1 className="mt-5 text-[44px] font-semibold leading-[1.05] tracking-[-0.02em] text-neutral-900 md:text-[60px]">
             {detail.title}
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-[21px] leading-[1.55] text-neutral-900">
