@@ -4,6 +4,7 @@
 # Next.js build output
 /.next
 /out
+*.tsbuildinfo
 
 # macOS Finder metadata
 .DS_Store
