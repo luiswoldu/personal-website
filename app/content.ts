@@ -16,6 +16,8 @@ export type Project = {
   bg: string;
   aspect: string;
   image?: string;
+  /** When set, the tile links straight to this URL instead of opening the detail view. */
+  href?: string;
 };
 
 export type DetailBlock =
@@ -80,11 +82,13 @@ export const PROJECTS_LEFT: Project[] = [
 
 export const PROJECTS_RIGHT: Project[] = [
   {
-    slug: "reimagining-team-workspaces",
-    title: "Reimagining team workspaces",
-    meta: "NOTION · SHIPPED 2026",
+    slug: "scoring-social-media",
+    title: "Scoring social media",
+    meta: "PULSE · CONTRACT 2025",
     bg: "bg-accent",
-    aspect: "aspect-[4/3]",
+    aspect: "aspect-[2234/1254]",
+    image: "/projects/pulse/1-pulse-smv.png",
+    href: "https://www.pi-metrics.com",
   },
   {
     slug: "bringing-autofill-to-macos",
