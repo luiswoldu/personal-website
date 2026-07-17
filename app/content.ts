@@ -16,6 +16,8 @@ export type Project = {
   bg: string;
   aspect: string;
   image?: string;
+  /** When set, the tile plays this video as its cover instead of an image. */
+  video?: string;
   /** When set, the tile links straight to this URL instead of opening the detail view. */
   href?: string;
 };
@@ -24,6 +26,7 @@ export type DetailBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string; bold?: boolean }
   | { type: "image"; src?: string; bg?: string; aspect?: string; caption?: string }
+  | { type: "video"; src: string; aspect?: string; caption?: string }
   | { type: "list"; items: string[] }
   | { type: "statement"; text: string };
 
@@ -69,7 +72,8 @@ export const PROJECTS_LEFT: Project[] = [
     title: "Building the first AI chef",
     meta: "HANDS · IN PROGRESS",
     bg: "bg-[#dcdcdc]",
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-[1.2/1]",
+    video: "/projects/hands/hands-video-placeholder.mp4",
   },
   {
     slug: "story-board",
@@ -366,14 +370,36 @@ const STORYBOARD_BLOCKS: DetailBlock[] = [
   },
 ];
 
+const HANDS_BLOCKS: DetailBlock[] = [
+  {
+    type: "video",
+    src: "/projects/hands/hands-video-placeholder.mp4",
+    aspect: "aspect-[1920/1080]",
+  },
+  { type: "heading", text: "Making cooking personal" },
+  {
+    type: "paragraph",
+    text: "We believe in a future where cooking is effortless and deeply personal. Solving the “what’s for dinner” problem for millions of users involves creativity, personal context, and a lot of friction, which makes it a difficult product to get right. That’s why we're building Hands, the world's first AI personal chef. Helping you cook, meal plan, and grocery shop based on your preferences and goals.",
+  },
+  {
+    type: "paragraph",
+    text: "With just a photo of your ingredients, Hands can suggest real, relevant recipes that fit into your life. We’re pushing the limits of the latest frontier models to meet users where they are, and quickly prove our value. Making health more personal and accessible for everyone is a meaningful application of AI.",
+  },
+];
+
 // Live deployments get a "View project" button; static case studies don't.
 const LIVE_PROJECT_LINKS: Record<string, string> = {
-  "mobile-first-for-figma": "#",
+  "mobile-first-for-figma": "https://handsforu.com",
   "bringing-autofill-to-macos": "#",
 };
 
 // Real case-study content, keyed by slug; projects without an entry keep placeholders.
 const DETAIL_OVERRIDES: Record<string, Partial<ProjectDetail>> = {
+  "mobile-first-for-figma": {
+    subtitle:
+      "The world's first AI personal chef helping you cook, meal plan, and grocery shop",
+    blocks: HANDS_BLOCKS,
+  },
   "personalizing-how-you-cook": {
     subtitle:
       "A new service that personalizes recipe discovery cookbook-quality recipes from real content creators",

@@ -54,6 +54,24 @@ function Block({ block }: { block: DetailBlock }) {
           )}
         </figure>
       );
+    case "video":
+      return (
+        <figure className="mx-auto mt-28 max-w-6xl">
+          <video
+            src={block.src}
+            className={`w-full object-cover ${block.aspect ?? ""}`}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          {block.caption && (
+            <figcaption className="mt-6 text-[16px] italic text-neutral-500">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
     case "list":
       return (
         <ul className="mx-auto mt-8 max-w-2xl list-disc space-y-2 pl-6 text-[19px] leading-[1.65] text-neutral-900">
