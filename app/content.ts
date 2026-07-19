@@ -51,10 +51,14 @@ export const SITE = {
   footerCredit: "BY LUIS",
 };
 
+export const ABOUT = {
+  heroImage: "/about/about-hero.jpeg",
+  heroAlt: "Luis as a child, wearing a handmade party hat at a birthday table.",
+};
+
 export const NAV_LINKS: NavLink[] = [
-  { label: "WORK", href: "#work" },
-  { label: "FUN", href: "#fun" },
-  { label: "ABOUT", href: "#about" },
+  { label: "WORK", href: "/#work" },
+  { label: "ABOUT", href: "/about" },
   { label: "RESUME", href: "#resume" },
 ];
 
@@ -73,7 +77,7 @@ export const PROJECTS_LEFT: Project[] = [
     meta: "HANDS · IN PROGRESS",
     bg: "bg-[#dcdcdc]",
     aspect: "aspect-[1.2/1]",
-    video: "/projects/hands/hands-video-placeholder.mp4",
+    image: "/projects/hands/1-hands.jpg",
   },
   {
     slug: "story-board",
@@ -362,7 +366,7 @@ const STORYBOARD_BLOCKS: DetailBlock[] = [
   { type: "heading", text: "Legacy" },
   {
     type: "paragraph",
-    text: "Today, Storyboard continues as a personal project. I'm currently using Storyboard 3, and it's become a foundational part of my everyday life. The biggest improvement was a set of time dots on the vertical lines of the calendar. They mark 12, 3, 6, and 9—like the face of a watch—making it much easier to sketch out appointments and shorter blocks of time without adding visual clutter.",
+    text: "Today, Storyboard continues as a personal project. I'm currently using Storyboard 3, and it has become a foundational part of my everyday life. The biggest improvement was a set of time dots on the vertical lines of the calendar. They mark 12, 3, 6, and 9—like the face of a watch—making it much easier to sketch out appointments and shorter blocks of time without adding visual clutter.",
   },
   {
     type: "paragraph",
@@ -372,9 +376,9 @@ const STORYBOARD_BLOCKS: DetailBlock[] = [
 
 const HANDS_BLOCKS: DetailBlock[] = [
   {
-    type: "video",
-    src: "/projects/hands/hands-video-placeholder.mp4",
-    aspect: "aspect-[1920/1080]",
+    type: "image",
+    src: "/projects/hands/1-hands.jpg",
+    aspect: "aspect-[3840/2160]",
   },
   { type: "heading", text: "Making cooking personal" },
   {

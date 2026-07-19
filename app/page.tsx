@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header activeHref="#work" />
+      <Header activeHref="/#work" />
       <main className="flex-1">
         <Hero />
         <ProjectGrid id="work" columns={[PROJECTS_LEFT, PROJECTS_RIGHT]} />

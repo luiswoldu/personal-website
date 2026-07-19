@@ -130,7 +130,7 @@ export default async function ProjectDetailPage({
             </a>
           )}
         </section>
-        <article className="mt-32">
+        <article className="pt-22 [&>*:first-child]:mt-0">
           {detail.blocks.map((block, i) => (
             <Block key={i} block={block} />
           ))}

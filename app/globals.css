@@ -20,3 +20,81 @@ body {
   background-color: var(--color-page);
   color: var(--color-ink);
 }
+
+/* About header — the crop window and its stationary image. */
+.about-intro {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition:
+    opacity 0.8s ease-in,
+    transform 0.8s ease-in;
+}
+
+.about-intro.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .about-intro {
+    transition-duration: 0.6s;
+  }
+
+  /* Delay only the reveal — hiding again should react immediately. */
+  .about-intro.is-visible {
+    transition-delay: 1.4s;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-crop {
+    width: var(--crop-w, 805px);
+    height: var(--crop-h, 330px);
+  }
+
+  /* Opaque panel: as the intro fades in it also occludes the strip still
+     closing behind it, so the handoff overlaps in space, not just time. */
+  .about-intro {
+    background-color: var(--color-page);
+  }
+
+  /* Fixed size and never transformed, so the crop reads as a letterbox, not a zoom. */
+  .about-crop-image {
+    aspect-ratio: auto;
+    width: max(1441px, 100vw);
+    height: 591px;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-crop-image {
+    animation: about-fade-in 1.2s ease-out both;
+  }
+}
+
+@keyframes about-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-crop-image {
+    animation: none;
+  }
+
+  .about-intro {
+    transition: none;
+    transform: none;
+  }
+}
