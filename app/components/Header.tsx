@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FOOTER_LINKS, NAV_LINKS, SITE, type NavLink } from "../content";
+import { ChevronRight } from "lucide-react";
+import { NAV_LINKS, PANEL_LINKS, SITE, type NavLink } from "../content";
 import NavMark from "./NavMark";
 
 type HeaderProps = {
@@ -74,35 +75,41 @@ export default function Header({
         className="nav-panel absolute inset-x-0 top-[68px] z-20 bg-page"
       >
         <div className="px-7 pt-10">
-          <nav className="flex flex-col items-start gap-6">
-            {links.map((link, index) => (
+          <h2
+            id="site-nav-panel-heading"
+            style={stagger(0)}
+            className="nav-panel-item font-mono text-[13px] tracking-[0.12em] text-muted"
+          >
+            PROJECTS
+          </h2>
+          {/* Rows stretch full-width below md so the chevron pins to the edge
+              and the whole row is a tap target. From md they shrink to their
+              label, which brings the chevron in beside the text. */}
+          <nav
+            aria-labelledby="site-nav-panel-heading"
+            className="mt-5 flex flex-col gap-6 md:items-start"
+          >
+            {PANEL_LINKS.map((link, index) => (
               <a
                 key={link.label}
                 href={link.href}
                 download={link.download}
-                onClick={() => setOpen(false)}
-                style={stagger(index)}
-                className="nav-panel-item font-mono text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-accent"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <div className="mt-12 flex flex-wrap gap-x-10 gap-y-3 font-mono text-[13px] tracking-[0.12em] text-faint">
-            {FOOTER_LINKS.map((link, index) => (
-              <a
-                key={link.label}
-                href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                 onClick={() => setOpen(false)}
-                style={stagger(links.length + index)}
-                className="nav-panel-item transition-colors hover:text-ink"
+                style={stagger(index + 1)}
+                className="nav-panel-item group flex items-center justify-between font-mono text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-accent md:gap-2"
               >
                 {link.label}
+                {/* Tailwind scopes hover: to devices that have it, so on touch
+                    the chevron rides in on focus instead of sticking after a tap. */}
+                <ChevronRight
+                  aria-hidden
+                  className="h-6 w-6 -translate-x-1 opacity-0 transition duration-150 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
+                />
               </a>
             ))}
-          </div>
+          </nav>
         </div>
       </div>
     </div>

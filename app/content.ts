@@ -67,6 +67,15 @@ export const NAV_LINKS: NavLink[] = [
   },
 ];
 
+/**
+ * The nav panel's own links. Unlike NAV_LINKS these point off-site — the panel
+ * is a "what I'm building" menu, not a second copy of the header nav.
+ */
+export const PANEL_LINKS: NavLink[] = [
+  { label: "HANDS", href: "https://handsforu.com" },
+  { label: "SHOP", href: "https://shop-app-delta.vercel.app" },
+];
+
 export const WORK_HISTORY: WorkItem[] = [
   { year: "2026", company: "You&Company Consulting", role: "Design Engineer" },
   {
