@@ -1,6 +1,8 @@
 export type NavLink = {
   label: string;
   href: string;
+  /** When set, the link downloads its target under this filename instead of navigating. */
+  download?: string;
 };
 
 export type WorkItem = {
@@ -47,7 +49,6 @@ export type FooterLink = {
 export const SITE = {
   name: "LUIS WOLDU",
   title: "PRODUCT DESIGNER + ENGINEER",
-  lmLabel: "LUISLM",
   footerCredit: "BY LUIS",
 };
 
@@ -59,7 +60,11 @@ export const ABOUT = {
 export const NAV_LINKS: NavLink[] = [
   { label: "WORK", href: "/#work" },
   { label: "ABOUT", href: "/about" },
-  { label: "RESUME", href: "#resume" },
+  {
+    label: "RESUME",
+    href: "/resume/aug7-resume.pdf",
+    download: "Luis-Woldu-Resume.pdf",
+  },
 ];
 
 export const WORK_HISTORY: WorkItem[] = [
