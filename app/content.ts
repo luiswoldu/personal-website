@@ -64,10 +64,11 @@ export const NAV_LINKS: NavLink[] = [
 
 export const WORK_HISTORY: WorkItem[] = [
   { year: "2026", company: "You&Company Consulting", role: "Design Engineer" },
-  { year: "2025", company: "Company", role: "Software Engineering Intern" },
-  { year: "2025", company: "Pulse Advertising", role: "Software Engineering Intern" },
-  { year: "2024", company: "Company", role: "Software Engineering Intern" },
-  { year: "2023", company: "Company", role: "Cut role ?" },
+  {
+    year: "2025",
+    company: "Pulse Advertising",
+    role: "Software Engineering Intern",
+  },
 ];
 
 export const PROJECTS_LEFT: Project[] = [
@@ -98,13 +99,6 @@ export const PROJECTS_RIGHT: Project[] = [
     aspect: "aspect-[2234/1254]",
     image: "/projects/pulse/1-pulse-smv.png",
     href: "https://www.pi-metrics.com",
-  },
-  {
-    slug: "bringing-autofill-to-macos",
-    title: "Bringing autofill to macOS",
-    meta: "1PASSWORD · SHIPPED 2025",
-    bg: "bg-teal-card",
-    aspect: "aspect-[16/10]",
   },
   {
     slug: "personalizing-how-you-cook",
@@ -394,7 +388,6 @@ const HANDS_BLOCKS: DetailBlock[] = [
 // Live deployments get a "View project" button; static case studies don't.
 const LIVE_PROJECT_LINKS: Record<string, string> = {
   "mobile-first-for-figma": "https://handsforu.com",
-  "bringing-autofill-to-macos": "#",
 };
 
 // Real case-study content, keyed by slug; projects without an entry keep placeholders.
