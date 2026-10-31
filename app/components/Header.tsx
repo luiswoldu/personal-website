@@ -35,7 +35,7 @@ export default function Header({
       <header className="grid h-[68px] grid-cols-[1fr_auto] items-center border-b border-line px-7 md:grid-cols-2">
         <div className="flex items-baseline gap-6 font-mono text-[14px] tracking-[0.08em]">
           <span className="font-semibold text-ink">{SITE.name}</span>
-          <span className="hidden text-muted sm:inline">{SITE.title}</span>
+          <span className="hidden text-secondary-grey sm:inline">{SITE.title}</span>
         </div>
         <div className="flex items-center justify-end md:justify-between">
           <nav className="hidden items-center gap-10 font-mono text-[14px] tracking-[0.08em] md:flex">
@@ -46,8 +46,8 @@ export default function Header({
                 download={link.download}
                 className={
                   link.href === activeHref
-                    ? "text-accent"
-                    : "text-ink/80 transition-colors hover:text-accent"
+                    ? "text-ink font-semibold"
+                    : "text-secondary-grey transition-colors hover:text-ink"
                 }
               >
                 {link.label}
@@ -63,7 +63,7 @@ export default function Header({
             aria-expanded={open}
             aria-controls="site-nav-panel"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="-m-3 flex items-center p-3 text-faint transition-colors hover:text-ink"
+            className="-m-3 flex items-center p-3 text-secondary-grey transition-colors hover:text-ink"
           >
             <NavMark />
           </button>
@@ -78,7 +78,7 @@ export default function Header({
           <h2
             id="site-nav-panel-heading"
             style={stagger(0)}
-            className="nav-panel-item font-mono text-[13px] tracking-[0.12em] text-muted"
+            className="nav-panel-item font-mono text-[13px] tracking-[0.12em] text-secondary-grey"
           >
             PROJECTS
           </h2>
@@ -98,7 +98,7 @@ export default function Header({
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                 onClick={() => setOpen(false)}
                 style={stagger(index + 1)}
-                className="nav-panel-item group flex items-center justify-between font-mono text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-accent md:gap-2"
+                className="nav-panel-item group flex items-center justify-between font-mono text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-secondary-grey md:gap-2"
               >
                 {link.label}
                 {/* Tailwind scopes hover: to devices that have it, so on touch

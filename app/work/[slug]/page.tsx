@@ -22,14 +22,14 @@ function Block({ block }: { block: DetailBlock }) {
   switch (block.type) {
     case "heading":
       return (
-        <h2 className="mx-auto mt-24 max-w-2xl text-[32px] font-semibold tracking-[-0.015em] text-neutral-900">
+        <h2 className="mx-auto mt-24 max-w-2xl text-[32px] font-semibold tracking-[-0.015em] text-ink">
           {block.text}
         </h2>
       );
     case "paragraph":
       return (
         <p
-          className={`mx-auto mt-8 max-w-2xl text-[19px] leading-[1.65] text-neutral-900 ${block.bold ? "font-semibold" : ""}`}
+          className={`mx-auto mt-8 max-w-2xl text-[19px] leading-[1.65] text-ink ${block.bold ? "font-semibold" : ""}`}
         >
           {block.text}
         </p>
@@ -48,7 +48,7 @@ function Block({ block }: { block: DetailBlock }) {
             <div className={`w-full ${block.aspect ?? ""} ${block.bg ?? ""}`} />
           )}
           {block.caption && (
-            <figcaption className="mt-6 text-[16px] italic text-neutral-500">
+            <figcaption className="mt-6 text-[16px] italic text-secondary-grey">
               {block.caption}
             </figcaption>
           )}
@@ -66,7 +66,7 @@ function Block({ block }: { block: DetailBlock }) {
             playsInline
           />
           {block.caption && (
-            <figcaption className="mt-6 text-[16px] italic text-neutral-500">
+            <figcaption className="mt-6 text-[16px] italic text-secondary-grey">
               {block.caption}
             </figcaption>
           )}
@@ -74,7 +74,7 @@ function Block({ block }: { block: DetailBlock }) {
       );
     case "list":
       return (
-        <ul className="mx-auto mt-8 max-w-2xl list-disc space-y-2 pl-6 text-[19px] leading-[1.65] text-neutral-900">
+        <ul className="mx-auto mt-8 max-w-2xl list-disc space-y-2 pl-6 text-[19px] leading-[1.65] text-ink">
           {block.items.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
@@ -82,7 +82,7 @@ function Block({ block }: { block: DetailBlock }) {
       );
     case "statement":
       return (
-        <p className="mx-auto mt-28 max-w-2xl text-center text-[22px] font-semibold leading-snug text-neutral-900">
+        <p className="mx-auto mt-28 max-w-2xl text-center text-[22px] font-semibold leading-snug text-ink">
           {block.text}
         </p>
       );
@@ -105,25 +105,25 @@ export default async function ProjectDetailPage({
         <div className="mx-auto max-w-6xl pt-10">
           <a
             href="/#work"
-            className="inline-flex items-center gap-1 text-[14px] text-faint transition-colors hover:text-ink"
+            className="inline-flex items-center gap-1 text-[14px] text-secondary-grey transition-colors hover:text-ink"
           >
             <ChevronLeft className="h-8 w-8" aria-hidden />
           </a>
         </div>
         <section className="mx-auto max-w-3xl pt-14 text-center">
-          <p className="text-[15px] tracking-[0.02em] text-faint">
+          <p className="text-[15px] tracking-[0.02em] text-secondary-grey">
             {detail.meta}
           </p>
-          <h1 className="mt-5 text-[44px] font-semibold leading-[1.05] tracking-[-0.02em] text-neutral-900 md:text-[60px]">
+          <h1 className="mt-5 text-[44px] font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-[60px]">
             {detail.title}
           </h1>
-          <p className="mx-auto mt-7 max-w-xl text-[21px] leading-[1.55] text-neutral-900">
+          <p className="mx-auto mt-7 max-w-xl text-[21px] leading-[1.55] text-ink">
             {detail.subtitle}
           </p>
           {detail.link && (
             <a
               href={detail.link.href}
-              className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-[#414141] px-7 py-3.5 text-[16px] text-white transition-colors hover:bg-neutral-700"
+              className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-3.5 text-[16px] text-page transition-colors hover:bg-secondary-grey"
             >
               {detail.link.label}
               <ArrowUpRight className="h-[18px] w-[18px]" aria-hidden />

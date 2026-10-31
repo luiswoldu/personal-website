@@ -24,7 +24,7 @@ type FooterProps = {
 export default function Footer({ links = FOOTER_LINKS }: FooterProps) {
   return (
     <footer className="mt-28 border-t border-line px-7 py-7">
-      <div className="flex flex-col gap-5 font-mono text-[13px] tracking-[0.12em] text-faint sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-5 font-mono text-[13px] tracking-[0.12em] text-secondary-grey sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-center gap-2">
           DESIGNED + CODED WITH
           <HeartIcon />

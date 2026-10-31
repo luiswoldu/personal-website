@@ -5,14 +5,16 @@
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
   --font-sans: var(--font-inter), system-ui, sans-serif;
 
-  --color-ink: #33414d;
-  --color-muted: #9aa6b2;
-  --color-faint: #7c8a96;
-  --color-accent: #e4572e;
-  --color-teal-card: #41cfae;
-  --color-amber-card: #f2a900;
-  --color-line: #e6eaee;
-  --color-page: #fafbfc;
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #1d1d1f;
+  --color-primary-ink: #1d1d1f;
+  --color-secondary-grey: #6e6e73;
+  --color-secondary: #6e6e73;
+  --color-muted: #6e6e73;
+  --color-faint: #6e6e73;
+  --color-line: #f1f1f1;
+  --color-accent: #6e6e73;
 }
 
 html,
