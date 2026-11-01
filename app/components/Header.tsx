@@ -44,11 +44,7 @@ export default function Header({
                 key={link.label}
                 href={link.href}
                 download={link.download}
-                className={
-                  link.href === activeHref
-                    ? "text-ink font-semibold"
-                    : "text-secondary-grey transition-colors hover:text-ink"
-                }
+className="text-ink transition-colors hover:text-secondary-grey"
               >
                 {link.label}
               </a>
