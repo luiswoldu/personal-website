@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, IBM_Plex_Mono, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const serif = Source_Serif_4({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-source-serif",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plex-mono",
-});
-
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const gotham = localFont({
+  src: [
+    {
+      path: "../fonts/Gotham Book.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gotham Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gotham Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gotham",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,9 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${serif.variable} ${mono.variable} ${sans.variable} font-sans antialiased`}
-      >
+      <body className={`${gotham.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

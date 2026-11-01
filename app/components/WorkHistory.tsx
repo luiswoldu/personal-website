@@ -13,7 +13,7 @@ export default function WorkHistory({ items, className }: WorkHistoryProps) {
           key={job.year + job.company}
           className="grid grid-cols-[4rem_1fr] gap-x-6 text-[15px] sm:grid-cols-[4.5rem_1fr_1.6fr]"
         >
-          <span className="font-mono text-secondary-grey">{job.year}</span>
+          <span className="text-secondary-grey">{job.year}</span>
           <span className="text-ink">{job.company}</span>
           <span className="col-start-2 text-secondary-grey sm:col-start-3">
             {job.role}

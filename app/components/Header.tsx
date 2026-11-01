@@ -33,12 +33,12 @@ export default function Header({
     // data-nav-open drives the mark's morph; it has to sit on an ancestor of it.
     <div className="relative" data-nav-open={open || undefined}>
       <header className="grid h-[68px] grid-cols-[1fr_auto] items-center border-b border-line px-7 md:grid-cols-2">
-        <div className="flex items-baseline gap-6 font-mono text-[14px] tracking-[0.08em]">
+        <div className="flex items-baseline gap-6 text-[14px] tracking-[0.08em]">
           <span className="font-semibold text-ink">{SITE.name}</span>
           <span className="hidden text-secondary-grey sm:inline">{SITE.title}</span>
         </div>
         <div className="flex items-center justify-end md:justify-between">
-          <nav className="hidden items-center gap-10 font-mono text-[14px] tracking-[0.08em] md:flex">
+          <nav className="hidden items-center gap-10 text-[14px] tracking-[0.08em] md:flex">
             {links.map((link) => (
               <a
                 key={link.label}
@@ -78,7 +78,7 @@ export default function Header({
           <h2
             id="site-nav-panel-heading"
             style={stagger(0)}
-            className="nav-panel-item font-mono text-[13px] tracking-[0.12em] text-secondary-grey"
+            className="nav-panel-item text-[13px] tracking-[0.12em] text-secondary-grey"
           >
             PROJECTS
           </h2>
@@ -98,7 +98,7 @@ export default function Header({
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                 onClick={() => setOpen(false)}
                 style={stagger(index + 1)}
-                className="nav-panel-item group flex items-center justify-between font-mono text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-secondary-grey md:gap-2"
+                className="nav-panel-item group flex items-center justify-between text-[26px] tracking-[0.04em] text-ink transition-colors hover:text-secondary-grey md:gap-2"
               >
                 {link.label}
                 {/* Tailwind scopes hover: to devices that have it, so on touch

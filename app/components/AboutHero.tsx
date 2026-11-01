@@ -106,7 +106,7 @@ export default function AboutHero() {
 
         <p
           id="about-intro"
-          className={`about-intro mt-[70vh] mb-24 max-w-[600px] font-serif text-[clamp(1.125rem,1.5vw,1.5rem)] leading-[1.6] text-ink md:absolute md:top-1/2 md:right-0 md:left-0 md:z-20 md:mx-auto md:mt-0 md:mb-0 md:-translate-y-1/2 md:px-7 md:py-6 ${
+          className={`about-intro mt-[70vh] mb-24 max-w-[600px] text-[clamp(1.125rem,1.5vw,1.5rem)] leading-[1.6] text-ink md:absolute md:top-1/2 md:right-0 md:left-0 md:z-20 md:mx-auto md:mt-0 md:mb-0 md:-translate-y-1/2 md:px-7 md:py-6 ${
             paragraphVisible ? "is-visible" : ""
           }`}
         >

@@ -28,10 +28,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className={`w-full ${project.aspect} ${project.bg}`} />
       )}
       <figcaption className="mt-5 flex items-baseline justify-between gap-6">
-        <span className="font-serif text-[21px] leading-snug text-ink group-hover:text-secondary-grey transition-colors">
+        <span className="text-[21px] leading-snug text-ink group-hover:text-secondary-grey transition-colors">
           {project.title}
         </span>
-        <span className="shrink-0 font-mono text-[13px] tracking-[0.12em] text-secondary-grey">
+        <span className="shrink-0 text-[13px] tracking-[0.12em] text-secondary-grey">
           {project.meta}
         </span>
       </figcaption>
