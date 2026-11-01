@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, ChevronLeft } from "lucide-react";
 import { PROJECT_DETAILS, type DetailBlock } from "../../content";
@@ -103,16 +104,18 @@ export default async function ProjectDetailPage({
       <Header activeHref="#work" />
       <main className="flex-1 px-7 pb-32">
         <div className="mx-auto max-w-6xl pt-10">
-          <a
+          <Link
             href="/#work"
             className="inline-flex items-center gap-1 text-[14px] text-secondary-grey transition-colors hover:text-ink"
           >
             <ChevronLeft className="h-8 w-8" aria-hidden />
-          </a>
+          </Link>
         </div>
         <section className="mx-auto max-w-3xl pt-14 text-center">
-          <p className="text-[15px] tracking-[0.02em] text-secondary-grey">
-            {detail.meta}
+          <p className="flex items-center justify-center gap-2 text-[15px] tracking-[0.02em]">
+            <span className="text-ink">{detail.name}</span>
+            <span className="text-line">/</span>
+            <span className="text-secondary-grey">{detail.status}</span>
           </p>
           <h1 className="mt-5 text-[44px] font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-[60px]">
             {detail.title}

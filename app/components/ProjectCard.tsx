@@ -21,19 +21,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={project.image}
-          alt=""
+          alt={project.name || project.title}
           className={`w-full object-cover ${project.aspect}`}
         />
       ) : (
         <div className={`w-full ${project.aspect} ${project.bg}`} />
       )}
-      <figcaption className="mt-5 flex items-baseline justify-between gap-6">
-        <span className="text-[21px] leading-snug text-ink group-hover:text-secondary-grey transition-colors">
-          {project.title}
+      <figcaption className="mt-4 flex items-baseline gap-2 text-[17px] leading-snug md:text-[18px]">
+        <span className="text-ink transition-colors group-hover:text-secondary-grey">
+          {project.name}
         </span>
-        <span className="shrink-0 text-[13px] tracking-[0.12em] text-secondary-grey">
-          {project.meta}
-        </span>
+        <span className="text-line">/</span>
+        <span className="text-secondary-grey">{project.status}</span>
       </figcaption>
     </figure>
   );

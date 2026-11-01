@@ -16,7 +16,7 @@ export default function ProjectGrid({ columns, id }: ProjectGridProps) {
       {columns.map((projects, i) => (
         <div key={i} className="flex flex-col gap-12">
           {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       ))}

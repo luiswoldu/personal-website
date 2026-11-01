@@ -13,6 +13,8 @@ export type WorkItem = {
 
 export type Project = {
   slug: string;
+  name: string;
+  status: string;
   title: string;
   meta: string;
   bg: string;
@@ -34,6 +36,8 @@ export type DetailBlock =
 
 export type ProjectDetail = {
   slug: string;
+  name: string;
+  status: string;
   meta: string;
   title: string;
   subtitle: string;
@@ -88,16 +92,20 @@ export const WORK_HISTORY: WorkItem[] = [
 export const PROJECTS_LEFT: Project[] = [
   {
     slug: "mobile-first-for-figma",
+    name: "Hands",
+    status: "In Progress",
     title: "Building the first AI chef",
-    meta: "HANDS · IN PROGRESS",
+    meta: "Hands / In Progress",
     bg: "bg-line",
     aspect: "aspect-[1.2/1]",
     image: "/projects/hands/1-hands.jpg",
   },
   {
     slug: "story-board",
+    name: "Storyboard",
+    status: "2025",
     title: "Reimagining time management",
-    meta: "STORYBOARD · 2025",
+    meta: "Storyboard / 2025",
     bg: "bg-line",
     aspect: "aspect-[16/9]",
     image: "/projects/storyboard/1-storyboard.jpg",
@@ -107,8 +115,10 @@ export const PROJECTS_LEFT: Project[] = [
 export const PROJECTS_RIGHT: Project[] = [
   {
     slug: "scoring-social-media",
+    name: "Pulse",
+    status: "Contract 2025",
     title: "Scoring social media",
-    meta: "PULSE · CONTRACT 2025",
+    meta: "Pulse / Contract 2025",
     bg: "bg-line",
     aspect: "aspect-[2234/1254]",
     image: "/projects/pulse/1-pulse-smv.png",
@@ -116,8 +126,10 @@ export const PROJECTS_RIGHT: Project[] = [
   },
   {
     slug: "personalizing-how-you-cook",
+    name: "Chef+",
+    status: "Shipped 2025",
     title: "Personalizing how you cook",
-    meta: "CHEF+ · SHIPPED 2023",
+    meta: "Chef+ / Shipped 2025",
     bg: "bg-line",
     aspect: "aspect-[1400/1094]",
     image: "/projects/chef-plus/1-chef-plus-overview.png",
@@ -427,6 +439,8 @@ export const PROJECT_DETAILS: ProjectDetail[] = [
   ...PROJECTS_RIGHT,
 ].map((project) => ({
   slug: project.slug,
+  name: project.name,
+  status: project.status,
   meta: project.meta,
   title: project.title,
   subtitle:
