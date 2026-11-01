@@ -52,7 +52,6 @@ export type FooterLink = {
 
 export const SITE = {
   name: "LUIS WOLDU",
-  title: "PRODUCT DESIGNER + ENGINEER",
   footerCredit: "BY LUIS",
 };
 

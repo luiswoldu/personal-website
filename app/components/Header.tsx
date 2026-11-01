@@ -33,9 +33,8 @@ export default function Header({
     // data-nav-open drives the mark's morph; it has to sit on an ancestor of it.
     <div className="relative" data-nav-open={open || undefined}>
       <header className="grid h-[68px] grid-cols-[1fr_auto] items-center border-b border-line px-7 md:grid-cols-2">
-        <div className="flex items-baseline gap-6 text-[14px] tracking-[0.08em]">
+        <div className="hidden items-baseline text-[14px] tracking-[0.08em] md:flex">
           <span className="font-semibold text-ink">{SITE.name}</span>
-          <span className="hidden text-secondary-grey sm:inline">{SITE.title}</span>
         </div>
         <div className="flex items-center justify-end md:justify-between">
           <nav className="hidden items-center gap-10 text-[14px] tracking-[0.08em] md:flex">
