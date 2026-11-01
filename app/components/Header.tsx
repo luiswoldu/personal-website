@@ -32,9 +32,9 @@ export default function Header({
   return (
     // data-nav-open drives the mark's morph; it has to sit on an ancestor of it.
     <div className="relative" data-nav-open={open || undefined}>
-      <header className="grid h-[68px] grid-cols-[1fr_auto] items-center border-b border-line px-7 md:grid-cols-2">
+      <header className="grid h-[68px] grid-cols-[1fr_auto] items-center px-7 md:grid-cols-2">
         <div className="hidden items-baseline text-[14px] tracking-[0.08em] md:flex">
-          <span className="font-semibold text-ink">{SITE.name}</span>
+          <span className="font-normal text-secondary">{SITE.name}</span>
         </div>
         <div className="flex items-center justify-end md:justify-between">
           <nav className="hidden items-center gap-10 text-[14px] tracking-[0.08em] md:flex">
