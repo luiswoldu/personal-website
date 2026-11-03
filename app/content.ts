@@ -52,7 +52,6 @@ export type FooterLink = {
 
 export const SITE = {
   name: "LUIS WOLDU",
-  footerCredit: "BY LUIS",
 };
 
 export const ABOUT = {
@@ -126,9 +125,9 @@ export const PROJECTS_RIGHT: Project[] = [
   {
     slug: "personalizing-how-you-cook",
     name: "Chef+",
-    status: "Shipped 2025",
+    status: "Shipped 2022",
     title: "Personalizing how you cook",
-    meta: "Chef+ / Shipped 2025",
+    meta: "Chef+ / Shipped 2022",
     bg: "bg-line",
     aspect: "aspect-[1400/1094]",
     image: "/projects/chef-plus/1-chef-plus-overview.png",
